@@ -1,0 +1,85 @@
+SRS Document
+
+1. Introduction
+The purpose of this document is to provide a detailed description of the requirements for the image classification web application.
+The web application will allow users to upload an image file, which will be classified using a machine learning model.
+The web application will be built using Spring Boot, Python, TensorFlow, Flask, and Thymeleaf.
+
+
+2. Functional Requirements
+FR1: Image Upload
+The web application shall allow users to upload an image file from their computer.
+
+FR2: Image Classification
+The web application shall use a convolutional neural network machine learning model to classify the uploaded image.
+
+FR2.1: Machine Learning Model
+The machine learning model shall be trained using a publicly available dataset with a minimum accuracy of 95%.
+The model shall be saved in a format compatible with TensorFlow.
+
+FR2.2: Classification Results
+The web application shall display the top three classification results to the user, including the predicted class label and the associated confidence score.
+
+FR3: User Interface
+The web application shall provide a user-friendly interface that is easy to use.
+
+FR3.1: Home Page
+The home page shall allow users to upload an image file and display the classification results.
+
+FR3.2: About Page
+The about page shall provide information about the web application, the machine learning model, and the development team.
+
+FR3.3: Error Page
+The error page shall be displayed if there is an issue with the image upload or classification.
+
+
+3. Non-Functional Requirements
+NFR1: Performance
+The web application shall be responsive and fast, with a maximum response time of 3 seconds.
+
+NFR2: Availability
+The web application shall be available 99% of the time, with a maximum downtime of 1 hour per month.
+
+NFR3: Security
+The web application shall be secure, with proper authentication and authorization mechanisms to protect user data. User data shall be encrypted in transit and at rest.
+
+NFR4: Scalability
+The web application shall be scalable, so it can handle up to 1,000 concurrent users and up to 100 image uploads per minute.
+
+NFR5: Maintainability
+The web application shall be maintainable and extensible, with code that is well-documented and follows best practices.
+
+
+4. Technical Requirements
+TR1: Backend Framework
+The web application shall be built using Spring Boot as the backend framework.
+
+TR2: Machine Learning Model
+The web application shall use a convolutional neural network machine learning model, implemented in Python and TensorFlow.
+
+TR3: Python Application
+The Python application shall be implemented using Flask and provide a RESTful API for image classification.
+
+TR4: User Interface
+The user interface shall be implemented using Thymeleaf and Bootstrap.
+
+TR5: HTTP Requests
+The web application shall use RestTemplate to make HTTP requests to the Python application.
+
+
+5. Assumptions and Dependencies
+AD1: Machine Learning Model
+The web application assumes that the machine learning model has been trained and tested on a suitable dataset with a minimum accuracy of 95%.
+
+AD2: Web and Database Servers
+The web application depends on the availability of a reliable web server and database server.
+
+AD3: Machine Learning Environment
+The web application depends on the availability of a suitable machine learning environment with Python and TensorFlow.
+
+
+6. Constraints
+The web application must comply with all relevant laws and regulations related to data privacy and security.
+This includes compliance with the General Data Protection Regulation (GDPR) and any other applicable data privacy laws.
+The development team must ensure that all user data is securely stored and processed,
+and that appropriate measures are taken to protect against unauthorized access or data breaches.

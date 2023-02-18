@@ -1,0 +1,11 @@
++----------------+             +-------------------+             +-----------------+
+|     User       |             |      Image        |             |      Result     |
++----------------+             +-------------------+             +-----------------+
+| id             |             | id                |             | id              |
+| email          | 1------*    | user_id           |    *------1  | image_id        |
+| password_hash  |             | filename          |             | category        |
+| first_name     |             | upload_timestamp  |             | confidence      |
+| last_name      |             | created_at        |             +-----------------+
+| created_at     |             | updated_at        |
+| updated_at     |             +-------------------+
++----------------+ 
