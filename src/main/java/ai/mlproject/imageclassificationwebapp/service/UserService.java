@@ -40,6 +40,7 @@ public class UserService {
     @Transactional
     public void update(Long id, String name) {
         User user = userRepository.findOne(id);
-        user.changeName(name);
+        user = user.builder().name(name).build();
+        userRepository.save(user);
     }
 }

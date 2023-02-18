@@ -3,18 +3,19 @@ package ai.mlproject.imageclassificationwebapp.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotEmpty;
+import lombok.Builder;
 import lombok.Getter;
-
-import java.time.LocalDateTime;
 
 @Entity
 @Getter
+@Builder
 public class User {
 
     @Id @GeneratedValue
     @Column(name = "member_id")
     private Long id;
 
+    @NotEmpty
     private String password;
 
     @NotEmpty
@@ -32,9 +33,5 @@ public class User {
         this.name = name;
         this.password = password;
         this.email = email;
-    }
-
-    public void changeName(String newName) {
-        this.name = newName;
     }
 }
