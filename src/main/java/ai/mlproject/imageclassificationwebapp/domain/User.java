@@ -33,13 +33,4 @@ public class User {
         this.password = password;
         this.email = email;
     }
-
-    // 밑 두 개 필요한지 의문
-    @Column(name = "created_at")
-    private LocalDateTime createdAt;
-
-    @Column(name = "updated_at")
-    private LocalDateTime updatedAt;
-
-
 }
