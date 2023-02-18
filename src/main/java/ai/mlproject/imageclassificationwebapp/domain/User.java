@@ -33,4 +33,8 @@ public class User {
         this.password = password;
         this.email = email;
     }
+
+    public void changeName(String newName) {
+        this.name = newName;
+    }
 }
