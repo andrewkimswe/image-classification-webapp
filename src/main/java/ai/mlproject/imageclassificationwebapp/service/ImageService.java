@@ -27,7 +27,7 @@ public class ImageService {
     }
 
     public Image getImageById(Long id) {
-        return imageRepository.findOne(id);
+        return imageRepository.findById(id).get();
     }
 
     public List<Image> getImagesByCategory(Long categoryId) {
@@ -40,13 +40,13 @@ public class ImageService {
 
     @Transactional
     public void updateImage(Long id, String name, String url, String description) {
-        Image image = imageRepository.findOne(id);
+        Image image = imageRepository.findById(id).get();
         image = image.builder().name(name).url(url).description(description).build();
         imageRepository.save(image);
     }
 
     @Transactional
     public void deleteImage(Long id) {
-        imageRepository.delete(id);
+        imageRepository.deleteById(id);
     }
 }
