@@ -34,7 +34,7 @@ public class UserApiController {
     @PutMapping("/api/v2/members/{id}")
     public UpdateUserResponse updateUserV2(@PathVariable("id") Long id, @RequestBody @Valid UpdateUserRequest request) {
         userService.update(id, request.getName());
-        User findUser = userService.findOne(id);
+        User findUser = userService.findById(id);
         return new UpdateUserResponse(findUser.getId(), findUser.getName());
     }
 

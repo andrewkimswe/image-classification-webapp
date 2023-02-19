@@ -22,7 +22,7 @@ public class ResultService {
     }
 
     public Result getResultById(Long id) {
-        return resultRepository.findOne(id);
+        return resultRepository.findById(id).orElse(null);
     }
 
     public List<Result> getAllResults() {
@@ -30,16 +30,16 @@ public class ResultService {
     }
 
     public List<Result> getResultsByImage(Long imageId) {
-        return resultRepository.findByImage(imageId);
+        return resultRepository.findByImageId(imageId);
     }
 
     public List<Result> getResultsByUser(Long userId) {
-        return resultRepository.findByUser(userId);
+        return resultRepository.findByUserId(userId);
     }
 
     @Transactional
     public void updateResult(Long id, double probability, String predictedLabel) {
-        Result result = resultRepository.findOne(id);
+        Result result = resultRepository.findById(id).get();
         result = Result.builder()
                 .id(result.getId())
                 .image(result.getImage())
