@@ -28,7 +28,7 @@ public class UserServiceTest {
 
         Long saveId = userService.join(user);
 
-        Assertions.assertEquals(user, userRepository.findOne(saveId));
+        Assertions.assertEquals(user, userRepository.findById(saveId));
     }
 
     @Test

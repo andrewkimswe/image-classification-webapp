@@ -11,6 +11,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
@@ -85,10 +86,11 @@ public class ImageServiceTest {
                 .user(User.builder().id(1L).build())
                 .category(Category.builder().id(1L).build())
                 .build();
-        when(imageRepository.findOne(1L)).thenReturn(image);
+        Optional<Image> optionalImage = Optional.of(image);
+        when(imageRepository.findById(1L)).thenReturn(optionalImage);
 
         Image result = imageService.getImageById(1L);
-        verify(imageRepository, times(1)).findOne(1L);
+        verify(imageRepository, times(1)).findById(1L);
         assertEquals("Test Image", result.getName());
     }
 
