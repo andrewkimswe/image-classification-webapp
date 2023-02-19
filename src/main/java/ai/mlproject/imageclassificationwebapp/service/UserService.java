@@ -33,13 +33,13 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public User findOne(Long userId) {
-        return userRepository.findOne(userId);
+    public User findById(Long userId) {
+        return userRepository.findById(userId).get();
     }
 
     @Transactional
     public void update(Long id, String name) {
-        User user = userRepository.findOne(id);
+        User user = userRepository.findById(id).get();
         user = user.builder().name(name).build();
         userRepository.save(user);
     }
