@@ -49,4 +49,6 @@ public class ResultService {
                 .build();
         resultRepository.save(result);
     }
+
+    // Command-Query Separation 적용할 것!
 }

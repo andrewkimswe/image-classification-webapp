@@ -29,5 +29,9 @@ public class Result {
 
     private String predictedLabel;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "label_id")
+    private Label label;
+
     // constructors, getters and setters
 }
