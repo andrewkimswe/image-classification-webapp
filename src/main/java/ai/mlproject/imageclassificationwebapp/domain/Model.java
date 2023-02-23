@@ -23,18 +23,24 @@ public class Model {
     @JoinColumn(name = "dataset_id")
     private final Dataset dataset;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "evaluation_id")
+    private final Evaluation evaluation;
+
     protected Model() {
         this.name = null;
         this.description = null;
         this.label = null;
         this.dataset = null;
+        this.evaluation = null;
     }
 
-    public Model(String name, String description, Label label, Dataset dataset) {
+    public Model(String name, String description, Label label, Dataset dataset, Evaluation evaluation) {
         this.name = name;
         this.description = description;
         this.label = label;
         this.dataset = dataset;
+        this.evaluation = evaluation;
     }
 
     public Long getId() {
@@ -57,6 +63,8 @@ public class Model {
         return dataset;
     }
 
+    public Evaluation getEvaluation() {return evaluation;}
+
     @Override
     public String toString() {
         return "Model{" +
@@ -65,6 +73,7 @@ public class Model {
                 ", description='" + description + '\'' +
                 ", label=" + label +
                 ", dataset= " + dataset +
+                ", evaluation= " + evaluation +
                 '}';
     }
 }

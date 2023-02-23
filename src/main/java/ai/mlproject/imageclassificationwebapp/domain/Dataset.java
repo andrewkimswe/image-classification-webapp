@@ -1,10 +1,20 @@
 package ai.mlproject.imageclassificationwebapp.domain;
 
+import jakarta.persistence.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Dataset {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
     private final String name;
+
+    @Column(nullable = false)
     private final List<Image> images;
 
     public Dataset(String name) {

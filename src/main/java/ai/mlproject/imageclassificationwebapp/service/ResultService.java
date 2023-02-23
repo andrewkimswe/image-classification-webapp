@@ -1,5 +1,6 @@
 package ai.mlproject.imageclassificationwebapp.service;
 
+import ai.mlproject.imageclassificationwebapp.domain.Dataset;
 import ai.mlproject.imageclassificationwebapp.domain.Result;
 import ai.mlproject.imageclassificationwebapp.repository.ResultRepository;
 import lombok.RequiredArgsConstructor;
@@ -35,6 +36,14 @@ public class ResultService {
 
     public List<Result> getResultsByUser(Long userId) {
         return resultRepository.findByUserId(userId);
+    }
+
+    public List<Result> getResultsByDataset(Dataset dataset) {
+        return resultRepository.findByImageModelDataset(dataset);
+    }
+
+    public List<Result> getResultsByEvaluationScore(double score) {
+        return resultRepository.findByEvaluationScoreGreaterThanEqual(score);
     }
 
     @Transactional
