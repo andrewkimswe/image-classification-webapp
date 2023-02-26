@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Administration Dashboard</h1>
+<div class="row">
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Users</h5>
+        <p class="card-text">Manage registered users.</p>
+        <a href="#" class="btn btn-primary">Go to Users</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Models</h5>
+        <p class="card-text">Manage trained models.</p>
+        <a href="#" class="btn btn-primary">Go to Models</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Datasets</h5>
+        <p class="card-text">Manage datasets.</p>
+        <a href="#" class="btn btn-primary">Go to Datasets</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Results</h5>
+        <p class="card-text">View model evaluation results.</p>
+        <a href="#" class="btn btn-primary">Go to Results</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

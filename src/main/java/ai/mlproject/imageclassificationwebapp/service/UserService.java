@@ -43,4 +43,10 @@ public class UserService {
         user = user.builder().name(name).build();
         userRepository.save(user);
     }
+
+    @Transactional
+    public void save(User user) {
+        validateDuplicateUser(user);
+        userRepository.save(user);
+    }
 }

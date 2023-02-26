@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <h1>Select Model</h1>
+  <hr>
+  <div class="row">
+    {% for model in models %}
+    <div class="col-md-4">
+      <div class="card mb-4 shadow-sm">
+        <img src="{{ model.image.url }}" class="card-img-top" alt="{{ model.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ model.name }}</h5>
+          <p class="card-text">{{ model.description }}</p>
+          <p class="card-text"><strong>Accuracy:</strong> {{ model.evaluation.accuracy }}%</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group">
+              <a href="{% url 'predict' model.id %}" class="btn btn-sm btn-outline-secondary">Predict</a>
+              <a href="{% url 'evaluate' model.id %}" class="btn btn-sm btn-outline-secondary">Evaluate</a>
+            </div>
+            <small class="text-muted">{{ model.label.name }}</small>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

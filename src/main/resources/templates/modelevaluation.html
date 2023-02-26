@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mx-auto">
+      <h2>Model Evaluation</h2>
+      <hr>
+      <form method="POST" action="{% url 'evaluate_model' %}">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="model-select">Select Model:</label>
+          <select class="form-control" id="model-select" name="model">
+            {% for model in models %}
+            <option value="{{ model.id }}">{{ model.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="evaluation-select">Select Evaluation:</label>
+          <select class="form-control" id="evaluation-select" name="evaluation">
+            {% for evaluation in evaluations %}
+            <option value="{{ evaluation.id }}">{{ evaluation.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Evaluate</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

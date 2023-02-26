@@ -21,15 +21,14 @@ public class User {
     @NotEmpty
     private String name;
 
-    @Embedded
-    @JsonIgnore
-    private Email email;
+    @NotEmpty
+    private String email;
 
     protected User() {
 
     }
 
-    public User(Long id, String name, String password, Email email) {
+    public User(Long id, String name, String password, String email) {
         this.id = id;
         this.name = name;
         this.password = password;

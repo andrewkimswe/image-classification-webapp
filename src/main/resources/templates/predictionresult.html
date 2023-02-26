@@ -1,0 +1,45 @@
+<!-- prediction_results.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Prediction Results</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+        crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+  <h1 class="my-4">Prediction Results</h1>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Image</th>
+      <th scope="col">Model</th>
+      <th scope="col">Predicted Label</th>
+      <th scope="col">Probability</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td><img src="/static/images/image1.jpg" alt="Image 1" class="img-thumbnail"></td>
+      <td>Model 1</td>
+      <td>Label A</td>
+      <td>0.95</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td><img src="/static/images/image2.jpg" alt="Image 2" class="img-thumbnail"></td>
+      <td>Model 2</td>
+      <td>Label B</td>
+      <td>0.82</td>
+    </tr>
+    <!-- More result rows go here -->
+    </tbody>
+  </table>
+</div>
+</body>
+</html>
