@@ -10,7 +10,7 @@ public interface ResultRepository extends JpaRepository<Result, Long> {
     List<Result> findByUserId(Long userId);
     List<Result> findByImageId(Long imageId);
 
-    List<Result> findByImageModelDataset(Dataset dataset);
+    List<Result> findByImageDataset(Dataset dataset);
     List<Result> findByEvaluationScoreGreaterThanEqual(double score);
 
 }

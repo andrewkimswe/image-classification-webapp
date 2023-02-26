@@ -1,21 +1,26 @@
 package ai.mlproject.imageclassificationwebapp.domain;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@NoArgsConstructor
 public class Dataset {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(nullable = false)
-    private final String name;
+    private String name;
 
-    @Column(nullable = false)
-    private final List<Image> images;
+    @OneToMany(mappedBy = "dataset", cascade = CascadeType.ALL, orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Image> images;
 
     public Dataset(String name) {
         this.name = name;

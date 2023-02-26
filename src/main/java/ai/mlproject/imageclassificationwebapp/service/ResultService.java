@@ -39,7 +39,7 @@ public class ResultService {
     }
 
     public List<Result> getResultsByDataset(Dataset dataset) {
-        return resultRepository.findByImageModelDataset(dataset);
+        return resultRepository.findByImageDataset(dataset);
     }
 
     public List<Result> getResultsByEvaluationScore(double score) {

@@ -1,10 +1,7 @@
 package ai.mlproject.imageclassificationwebapp.domain;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Getter
@@ -23,7 +20,8 @@ public class Image {
     @Column(nullable = false)
     private String url;
 
-    @Column(nullable = false)
+    @Column(name = "description", nullable = false, columnDefinition = "TEXT")
+    @Lob
     private String description;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -31,8 +29,13 @@ public class Image {
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "category_id")
+    @JoinColumn(name = "category_id", referencedColumnName = "category_id", nullable = false, foreignKey = @ForeignKey(name = "fk_image_category"))
     private Category category;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dataset_id")
+    private Dataset dataset;
+
 
     // getters and setters
 }

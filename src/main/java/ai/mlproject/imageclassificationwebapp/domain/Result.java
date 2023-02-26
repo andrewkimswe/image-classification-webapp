@@ -33,5 +33,8 @@ public class Result {
     @JoinColumn(name = "label_id")
     private Label label;
 
+    @Column(name = "evaluation_score") // check the spelling and column mapping
+    private Double evaluationScore;
+
     // constructors, getters and setters
 }
